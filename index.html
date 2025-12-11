@@ -15,18 +15,18 @@
         z-index: -1; background: black;
     }
 
-    body { color: #00ff80; text-shadow: 0 0 8px #00ff80; }
+    body { color: #00eaff; text-shadow: 0 0 8px #00eaff; }
 
     header {
         padding: 25px; text-align: center; font-size: 30px;
         letter-spacing: 3px; font-weight: bold;
-        border-bottom: 2px solid #00ff80;
-        box-shadow: 0 0 15px #00ff80;
+        border-bottom: 2px solid #00eaff;
+        box-shadow: 0 0 15px #00eaff;
     }
 
     .hero { padding: 100px 20px; text-align: center; }
-    .hero h2 { font-size: 50px; text-shadow: 0 0 15px #00ff80; }
-    .hero p { margin-top: 10px; font-size: 18px; color: #baffd9; }
+    .hero h2 { font-size: 50px; text-shadow: 0 0 15px #00eaff; }
+    .hero p { margin-top: 10px; font-size: 18px; color: #a9f6ff; }
 
     .bot-section {
         max-width: 800px; margin: auto; padding: 60px 20px;
@@ -36,39 +36,39 @@
 
     .bot-btn {
         display: block; width: 100%; padding: 14px; margin: 12px 0;
-        background: rgba(0,0,0,0.4); border: 2px solid #00ff80; color: #00ff80;
+        background: rgba(0,0,0,0.4); border: 2px solid #00eaff; color: #00eaff;
         text-decoration: none; text-align: center; border-radius: 10px;
-        font-size: 18px; font-weight: 600; box-shadow: 0 0 10px #00ff80;
+        font-size: 18px; font-weight: 600; box-shadow: 0 0 10px #00eaff;
         transition: 0.2s; backdrop-filter: blur(4px);
     }
 
     .bot-btn:hover {
-        background: #00ff80; color: #000; box-shadow: 0 0 20px #00ff80;
+        background: #00eaff; color: #000; box-shadow: 0 0 20px #00eaff;
     }
 
     /* OWNER BOX */
     .owner-box {
         max-width: 650px; margin: 70px auto;
-        padding: 50px 30px; border: 2px solid #00ff80;
+        padding: 50px 30px; border: 2px solid #00eaff;
         border-radius: 20px; background: rgba(0, 0, 0, 0.6);
-        box-shadow: 0 0 25px #00ff80; text-align: center;
+        box-shadow: 0 0 25px #00eaff; text-align: center;
     }
 
     .owner-box img {
         width: 90px; margin-bottom: 20px;
-        filter: drop-shadow(0 0 10px #00ff80);
+        filter: drop-shadow(0 0 10px #00eaff);
     }
 
     .owner-btn {
         display: inline-block; margin-top: 30px; padding: 14px 38px;
-        background: #00ff80; color: #000; font-weight: bold;
+        background: #00eaff; color: #000; font-weight: bold;
         border-radius: 8px; text-decoration: none;
-        box-shadow: 0 0 15px #00ff80; font-size: 17px;
+        box-shadow: 0 0 15px #00eaff; font-size: 17px;
     }
 
     .owner-btn:hover { opacity: 0.85; }
 
-    /* 🔥 LOGO VIEWER BOX */
+    /* LOGO VIEWER BOX */
     #logoBox {
         margin-top: 30px;
         display: none;
@@ -78,10 +78,9 @@
     #logoBox img {
         width: 100%;
         border-radius: 12px;
-        box-shadow: 0 0 25px #00ff80;
+        box-shadow: 0 0 25px #00eaff;
     }
 
-    /* Fade animation */
     @keyframes fadeIn {
         from {opacity: 0; transform: scale(0.92);}
         to   {opacity: 1; transform: scale(1);}
@@ -89,14 +88,13 @@
 
     .footer {
         margin-top: 60px; text-align: center;
-        padding: 20px; font-size: 15px; color: #77ffb3;
+        padding: 20px; font-size: 15px; color: #69eaff;
     }
 </style>
 </head>
 
 <body>
 
-<!-- MATRIX BACKGROUND -->
 <canvas id="matrixBg"></canvas>
 
 <header>𒆜 𝕄𝔸𝔸ℕ𝔸𝕍 ℕ𝔼𝕋𝕎𝕆ℝ𝕂 𒆜</header>
@@ -120,7 +118,7 @@
 </section>
 
 <section>
-    <h2 style="text-align:center; font-size:40px; margin-top:50px; text-shadow:0 0 15px #00ff80;">
+    <h2 style="text-align:center; font-size:40px; margin-top:50px; text-shadow:0 0 15px #00eaff;">
         ♡!! 𝐍𝐄𝐓𝐖𝐎𝐑𝐊 𝐅𝐎𝐔𝐍𝐃𝐄𝐑 !!♡
     </h2>
 
@@ -134,10 +132,8 @@
             ➤ ACCESS: <b>妥 ᴳᴿᴬᴺᵀᴱᴰ 妥</b>
         </div>
 
-        <!-- 🔥 TAP TO SEE LOGO BUTTON -->
         <a class="owner-btn" onclick="showLogo()">✨ TAP TO SEE LOGO ✨</a>
 
-        <!-- 🔥 HIDDEN LOGO BOX -->
         <div id="logoBox">
             <img src="https://files.catbox.moe/iamdk3.jpg">
         </div>
@@ -151,7 +147,6 @@
 </div>
 
 <script>
-/* MATRIX RAIN */
 const canvas = document.getElementById("matrixBg");
 const ctx = canvas.getContext("2d");
 canvas.width = innerWidth; canvas.height = innerHeight;
@@ -167,7 +162,7 @@ function drawMatrix() {
     ctx.fillStyle = "rgba(0,0,0,0.08)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = "#00ff80";
+    ctx.fillStyle = "#00eaff";
     ctx.font = fontSize + "px monospace";
 
     for (let i = 0; i < drops.length; i++) {
@@ -180,7 +175,6 @@ function drawMatrix() {
 }
 setInterval(drawMatrix, 40);
 
-/* 🔥 SHOW LOGO FUNCTION */
 function showLogo() {
     document.getElementById("logoBox").style.display = "block";
 }
