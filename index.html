@@ -3,187 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>𝐌𝐀𝐀𝐍𝐀𝐕 𝐍𝐄𝐓𝐖𝐎𝐑𝐊</title>
+<title>Maanav Bots</title>
 
 <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-
-    /* MATRIX BACKGROUND */
-    #matrixBg {
-        position: fixed; top: 0; left: 0;
-        width: 100vw; height: 100vh;
-        z-index: -1; background: black;
+    body {
+        margin: 0;
+        padding: 0;
+        background: #02060d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+        font-family: Poppins, sans-serif;
     }
 
-    body { color: #00ff80; text-shadow: 0 0 8px #00ff80; }
-
-    header {
-        padding: 25px; text-align: center; font-size: 30px;
-        letter-spacing: 3px; font-weight: bold;
-        border-bottom: 2px solid #00ff80;
-        box-shadow: 0 0 15px #00ff80;
+    .glow-btn {
+        padding: 15px 35px;
+        font-size: 22px;
+        color: cyan;
+        background: transparent;
+        border: 2px solid cyan;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
     }
 
-    .hero { padding: 100px 20px; text-align: center; }
-    .hero h2 { font-size: 50px; text-shadow: 0 0 15px #00ff80; }
-    .hero p { margin-top: 10px; font-size: 18px; color: #baffd9; }
-
-    .bot-section {
-        max-width: 800px; margin: auto; padding: 60px 20px;
+    .glow-btn:hover {
+        box-shadow: 0 0 20px cyan;
     }
 
-    .bot-title { text-align: center; font-size: 30px; margin-bottom: 30px; }
-
-    .bot-btn {
-        display: block; width: 100%; padding: 14px; margin: 12px 0;
-        background: rgba(0,0,0,0.4); border: 2px solid #00ff80; color: #00ff80;
-        text-decoration: none; text-align: center; border-radius: 10px;
-        font-size: 18px; font-weight: 600; box-shadow: 0 0 10px #00ff80;
-        transition: 0.2s; backdrop-filter: blur(4px);
+    .image-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.6);
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.6s ease;
     }
 
-    .bot-btn:hover {
-        background: #00ff80; color: #000; box-shadow: 0 0 20px #00ff80;
+    .image-box.active {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        pointer-events: auto;
     }
 
-    /* OWNER BOX */
-    .owner-box {
-        max-width: 650px; margin: 70px auto;
-        padding: 50px 30px; border: 2px solid #00ff80;
-        border-radius: 20px; background: rgba(0, 0, 0, 0.6);
-        box-shadow: 0 0 25px #00ff80; text-align: center;
+    .logo-img {
+        width: 700px;
+        max-width: 90vw;
+        border-radius: 15px;
     }
 
-    .owner-box img {
-        width: 90px; margin-bottom: 20px;
-        filter: drop-shadow(0 0 10px #00ff80);
+    /* BACK BUTTON */
+    #backBtn {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        padding: 10px 20px;
+        font-size: 18px;
+        background: transparent;
+        border: 2px solid cyan;
+        color: cyan;
+        border-radius: 8px;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.4s;
     }
 
-    .owner-btn {
-        display: inline-block; margin-top: 30px; padding: 14px 38px;
-        background: #00ff80; color: #000; font-weight: bold;
-        border-radius: 8px; text-decoration: none;
-        box-shadow: 0 0 15px #00ff80; font-size: 17px;
-    }
-
-    .owner-btn:hover { opacity: 0.85; }
-
-    /* 🔥 LOGO VIEWER BOX */
-    #logoBox {
-        margin-top: 30px;
-        display: none;
-        animation: fadeIn 0.7s ease-in-out forwards;
-    }
-
-    #logoBox img {
-        width: 100%;
-        border-radius: 12px;
-        box-shadow: 0 0 25px #00ff80;
-    }
-
-    /* Fade animation */
-    @keyframes fadeIn {
-        from {opacity: 0; transform: scale(0.92);}
-        to   {opacity: 1; transform: scale(1);}
-    }
-
-    .footer {
-        margin-top: 60px; text-align: center;
-        padding: 20px; font-size: 15px; color: #77ffb3;
+    #backBtn.active {
+        opacity: 1;
+        pointer-events: auto;
     }
 </style>
 </head>
-
 <body>
 
-<!-- MATRIX BACKGROUND -->
-<canvas id="matrixBg"></canvas>
+<!-- MAIN BUTTON -->
+<button id="showBtn" class="glow-btn">MAANAV BOTS</button>
 
-<header>𒆜 𝕄𝔸𝔸ℕ𝔸𝕍 ℕ𝔼𝕋𝕎𝕆ℝ𝕂 𒆜</header>
+<!-- BACK BUTTON -->
+<button id="backBtn">BACK</button>
 
-<section class="hero">
-    <h2>❈ 𝕎𝔼𝕃ℂ𝕆𝕄𝔼 𝕋𝕆 𝕋ℍ𝔼 𝕄𝔸𝔸ℕ𝔸𝕍 ℕ𝔼𝕋𝕎𝕆ℝ𝕂 ❈</h2>
-    <p>𝐀 𝐏ʀɪᴠᴀᴛᴇ 𝐃ɪɢɪᴛᴀʟ 𝐔ɴɪᴠᴇʀꜱᴇ — 𝐁ᴏᴛꜱ, 𝐒ʏꜱᴛᴇᴍꜱ, 𝐓ᴏᴏʟꜱ — 𝐀ʟʟ 𝐂ʀᴇᴀᴛᴇᴅ 𝐁ʏ 𝐌ᴀᴀɴᴀᴠ.</p>
-</section>
-
-<section class="bot-section">
-    <h3 class="bot-title">𝐌𝐀𝐀𝐍𝐀𝐕 𝐎𝐅𝐅𝐈𝐂𝐈𝐀𝐋 𝐁𝐎𝐓𝐒 𝐀𝐑𝐄 𝐇𝐄𝐑𝐄!</h3>
-
-    <a class="bot-btn" href="https://t.me/maanavXmuzicbot?start=_tgr_PWz6JK04NjY1">ϻᴀᴀɴᴀᴠ ꭙ ϻᴜsɪᴄ • ALIVE</a>
-    <a class="bot-btn" href="https://t.me/eveXmusic_bot?start=_tgr_xoU-g1k4MTll">ᴅʀᴇᴀᴍᴇʀ ꭙ ϻᴜsɪᴄ • ALIVE</a>
-    <a class="bot-btn" href="https://t.me/maanavXchatbot?start=_tgr_w7KOC4AzODA1">ϻᴀᴀɴᴀᴠ ꭙ ᴄʜᴀᴛ • ALIVE</a>
-    <a class="bot-btn" href="https://t.me/maanavXcfbot?start=_tgr_JefpShgwNGI1">ϻᴀᴀɴᴀᴠ ꭙ ʀᴀɴᴋɪɴɢ • ALIVE</a>
-    <a class="bot-btn" href="https://t.me/maanavXghbot?start=_tgr_vMnDJpI4OWE1">ϻᴀᴀɴᴀᴠ ꭙ ᴄᴏɴᴛʀᴏʟʟᴇʀ • ALIVE</a>
-    <a class="bot-btn" href="https://t.me/maanavXrxnbot?start="_tgr_qENYoTA5Yzc1">ϻᴀᴀɴᴀᴠ ꭙ ʀᴇᴀᴄᴛɪᴏɴ • ALIVE</a>
-    <a class="bot-btn" href="https://t.me/maanavXlgbot?start=_tgr_xyasJ1swYzI1">ϻᴀᴀɴᴀᴠ ꭙ ʟɪꜰᴇ ɢᴀᴍᴇ • ALIVE</a>
-    <a class="bot-btn" href="https://t.me/maanavXubot?start=_tgr_0zttKYo2MTdl">ϻᴀᴀɴᴀᴠ ꭙ ɴᴜᴍ ʙᴏᴛ • ALIVE</a>
-</section>
-
-<section>
-    <h2 style="text-align:center; font-size:40px; margin-top:50px; text-shadow:0 0 15px #00ff80;">
-        ♡!! 𝐍𝐄𝐓𝐖𝐎𝐑𝐊 𝐅𝐎𝐔𝐍𝐃𝐄𝐑 !!♡
-    </h2>
-
-    <div class="owner-box">
-
-        <img src="https://files.catbox.moe/chrj9o.mp4">
-
-        <div style="font-size:18px; margin-top:15px;">
-            ➤ IDENTITY: <b>妥 ᴄʟᴀꜱꜱɪꜰɪᴇᴅ 妥</b><br><br>
-            ➤ STATUS: <b>妥 ᴼᴺᴸᴵᴺᴱ 妥</b><br><br>
-            ➤ ACCESS: <b>妥 ᴳᴿᴬᴺᵀᴱᴰ 妥</b>
-        </div>
-
-        <!-- 🔥 TAP TO SEE LOGO BUTTON -->
-        <a class="owner-btn" onclick="showLogo()">✨ TAP TO SEE LOGO ✨</a>
-
-        <!-- 🔥 HIDDEN LOGO BOX -->
-        <div id="logoBox">
-            <img src="https://files.catbox.moe/iamdk3.jpg">
-        </div>
-
-        <a class="owner-btn" href="https://t.me/III_MAA7NAV_III">🌺 Contact Owner 🌺</a>
-    </div>
-</section>
-
-<div class="footer">
-    ᴘᴏᴡᴇʀᴇᴅ ʙʏ @ᴀʙᴏᴜᴛ_ᴍᴀᴀɴᴀᴠ • © 2025 ᴍᴀᴀɴᴀᴠ ɴᴇᴛᴡᴏʀᴋ
+<!-- IMAGE POPUP -->
+<div id="imageBox" class="image-box">
+    <img src="logo.jpg" class="logo-img" alt="Maanav Bots Logo">
 </div>
 
 <script>
-/* MATRIX RAIN */
-const canvas = document.getElementById("matrixBg");
-const ctx = canvas.getContext("2d");
-canvas.width = innerWidth; canvas.height = innerHeight;
+    const showBtn = document.getElementById("showBtn");
+    const backBtn = document.getElementById("backBtn");
+    const imageBox = document.getElementById("imageBox");
 
-const letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&*";
-const fontSize = 16;
-const columns = canvas.width / fontSize;
-const drops = [];
+    showBtn.addEventListener("click", () => {
+        showBtn.style.display = "none";
+        imageBox.classList.add("active");
+        backBtn.classList.add("active");
+    });
 
-for (let i = 0; i < columns; i++) drops[i] = 1;
-
-function drawMatrix() {
-    ctx.fillStyle = "rgba(0,0,0,0.08)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    ctx.fillStyle = "#00ff80";
-    ctx.font = fontSize + "px monospace";
-
-    for (let i = 0; i < drops.length; i++) {
-        const text = letters[Math.floor(Math.random() * letters.length)];
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.95) drops[i] = 0;
-        drops[i]++;
-    }
-}
-setInterval(drawMatrix, 40);
-
-/* 🔥 SHOW LOGO FUNCTION */
-function showLogo() {
-    document.getElementById("logoBox").style.display = "block";
-}
+    backBtn.addEventListener("click", () => {
+        showBtn.style.display = "block";
+        imageBox.classList.remove("active");
+        backBtn.classList.remove("active");
+    });
 </script>
 
 </body>
