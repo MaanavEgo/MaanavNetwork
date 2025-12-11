@@ -13,8 +13,18 @@
         font-family: 'Poppins', sans-serif;
     }
 
+    /* MATRIX BACKGROUND CANVAS */
+    #matrixBg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        background: black;
+    }
+
     body {
-        background: #000;
         color: #00ff80;
         text-shadow: 0 0 8px #00ff80;
     }
@@ -30,7 +40,7 @@
         box-shadow: 0 0 15px #00ff80;
     }
 
-    /* Hero Section */
+    /* Hero */
     .hero {
         padding: 100px 20px;
         text-align: center;
@@ -65,7 +75,7 @@
         width: 100%;
         padding: 14px;
         margin: 12px 0;
-        background: transparent;
+        background: rgba(0,0,0,0.4);
         border: 2px solid #00ff80;
         color: #00ff80;
         text-decoration: none;
@@ -75,6 +85,7 @@
         font-weight: 600;
         box-shadow: 0 0 10px #00ff80;
         transition: 0.2s;
+        backdrop-filter: blur(4px);
     }
 
     .bot-btn:hover {
@@ -83,7 +94,7 @@
         box-shadow: 0 0 20px #00ff80;
     }
 
-    /* OWNER SECTION */
+    /* Owner Box */
     .owner-box {
         max-width: 650px;
         margin: 70px auto;
@@ -130,15 +141,16 @@
 
 <body>
 
-<header>𒆜 𝕄𝔸𝔸ℕ𝔸𝕍 ℕ𝔼𝕋𝕎𝕆ℝ𝕂 𒆜</header>
+<!-- MATRIX BACKGROUND -->
+<canvas id="matrixBg"></canvas>
 
-<!-- HERO -->
+<header>𒆜 𝕄𝔸𝔸ℕ𝔸𝕍 ℕ𝔼𝕋𝕎𝕆ℝ𝕂 𒆜</header>
+
 <section class="hero">
-    <h2>❈ 𝕎𝔼𝕃ℂ𝕆𝕄𝔼 𝕋𝕆 𝕋ℍ𝔼 𝕄𝔸𝔸ℕ𝔸𝕍 ℕ𝔼𝕋𝕎𝕆ℝ𝕂 ❈</h2>
+    <h2>❈ 𝕎𝔼𝕃ℂ𝕆𝕄𝔼 𝕋𝕆 𝕋ℍ𝔼 𝕄𝔸𝔸ℕ𝔸𝕍 ℕ𝔼𝕋𝕎𝕆ℝ𝕂 ❈</h2>
     <p>𝐀 𝐏ʀɪᴠᴀᴛᴇ 𝐃ɪɢɪᴛᴀʟ 𝐔ɴɪᴠᴇʀꜱᴇ — 𝐁ᴏᴛꜱ, 𝐒ʏꜱᴛᴇᴍꜱ, 𝐓ᴏᴏʟꜱ — 𝐀ʟʟ 𝐂ʀᴇᴀᴛᴇᴅ 𝐁ʏ 𝐌ᴀᴀɴᴀᴠ.</p>
 </section>
 
-<!-- BOT BUTTONS -->
 <section class="bot-section">
     <h3 class="bot-title">𝐌𝐀𝐀𝐍𝐀𝐕 𝐎𝐅𝐅𝐈𝐂𝐈𝐀𝐋 𝐁𝐎𝐓𝐒 𝐀𝐑𝐄 𝐇𝐄𝐑𝐄!</h3>
 
@@ -146,20 +158,19 @@
 
     <a class="bot-btn" href="https://t.me/eveXmusic_bot?start=_tgr_xoU-g1k4MTll">ᴅʀᴇᴀᴍᴇʀ ꭙ ϻᴜsɪᴄ • ALIVE</a>
 
-    <a class="bot-btn" href="https://t.me/maanavXchatbot?start=_tgr_w7KOC4AzODA1">ϻᴀᴀɴᴀᴠ ꭙ ᴄʜᴀᴛ • ALIVE</a>
+    <a class="bot-btn" href="https://t.me/maanavXchatbot?start=_tgr_w7KOC4AzODA1">ϻᴀᴀᴠ ꭙ ᴄʜᴀᴛ • ALIVE</a>
 
-    <a class="bot-btn" href="https://t.me/maanavXcfbot?start=_tgr_JefpShgwNGI1">ϻᴀᴀɴᴀᴠ ꭙ ʀᴀɴᴋɪɴɢ • ALIVE</a>
+    <a class="bot-btn" href="https://t.me/maanavXcfbot?start=_tgr_JefpShgwNGI1">ϻᴀᴀᴠ ꭙ ʀᴀɴᴋɪɴɢ • ALIVE</a>
 
-    <a class="bot-btn" href="https://t.me/maanavXghbot?start=_tgr_vMnDJpI4OWE1">ϻᴀᴀɴᴀᴠ ꭙ ᴄᴏɴᴛʀᴏʟʟᴇʀ • ALIVE</a>
+    <a class="bot-btn" href="https://t.me/maanavXghbot?start=_tgr_vMnDJpI4OWE1">ϻᴀᴀᴠ ꭙ ᴄᴏɴᴛʀᴏʟʟᴇʀ • ALIVE</a>
 
-    <a class="bot-btn" href="https://t.me/maanavXrxnbot?start=_tgr_qENYoTA5Yzc1">ϻᴀᴀɴᴀᴠ ꭙ ʀᴇᴀᴄᴛɪᴏɴ • ALIVE</a>
+    <a class="bot-btn" href="https://t.me/maanavXrxnbot?start=_tgr_qENYoTA5Yzc1">ϻᴀᴀᴠ ꭙ ʀᴇᴀᴄᴛɪᴏɴ • ALIVE</a>
 
-    <a class="bot-btn" href="https://t.me/maanavXlgbot?start=_tgr_xyasJ1swYzI1">ϻᴀᴀɴᴀᴠ ꭙ ʟɪꜰᴇ-ɢᴀᴍᴇ • ALIVE</a>
+    <a class="bot-btn" href="https://t.me/maanavXlgbot?start=_tgr_xyasJ1swYzI1">ϻᴀᴀᴠ ꭙ ʟɪꜰᴇ ɢᴀᴍᴇ • ALIVE</a>
 
-    <a class="bot-btn" href="https://t.me/maanavXubot?start=_tgr_0zttKYo2MTdl">ϻᴀᴀɴᴀᴠ ꭙ ɴᴜᴍ-ʙᴏᴛ • ALIVE</a>
+    <a class="bot-btn" href="https://t.me/maanavXubot?start=_tgr_0zttKYo2MTdl">ϻᴀᴀᴠ ꭙ ɴᴜᴍ ʙᴏᴛ • ALIVE</a>
 </section>
 
-<!-- OWNER BOX -->x
 <section>
     <h2 style="text-align:center; font-size:40px; margin-top:50px; text-shadow:0 0 15px #00ff80;">
         ♡!! 𝐍𝐄𝐓𝐖𝐎𝐑𝐊 𝐅𝐎𝐔𝐍𝐃𝐄𝐑 !!♡
@@ -169,18 +180,60 @@
         <img src="https://files.catbox.moe/chrj9o.mp4">
 
         <div style="font-size:18px; margin-top:15px;">
-            ➤ IDENTITY: <b>妥 ᴄʟᴀꜱꜱɪꜰɪᴇᴅ 妥</b><br><br>
-            ➤ STATUS: <b>妥 ᴼᴺᴸᴵᴺᴱ 妥</b><br><br>
-            ➤ ACCESS: <b>妥 ᴳᴿᴬᴺᵀᴱᴰ 妥</b>
+            ➤ IDENTITY: <b>妥 ᴄʟᴀꜱꜱɪꜰɪᴇᴅ 妥</b><br><br>
+            ➤ STATUS: <b>妥 ᴼᴺᴸᴵᴺᴱ 妥</b><br><br>
+            ➤ ACCESS: <b>妥 ᴳᴿᴬᴺᵀᴱᴰ 妥</b>
         </div>
 
-        <a class="owner-btn" href="https://t.me/III_MAA7NAV_III">🌺 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐎𝐰𝐧𝐞𝐫 🌺</a>
+        <a class="owner-btn" href="https://t.me/III_MAA7NAV_III">🌺 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐎𝐰𝐧𝐞𝐫 🌺</a>
     </div>
 </section>
 
 <div class="footer">
     ᴘᴏᴡᴇʀᴇᴅ ʙʏ @ᴀʙᴏᴜᴛ_ᴍᴀᴀɴᴀᴠ • © 2025 ᴍᴀᴀɴᴀᴠ ɴᴇᴛᴡᴏʀᴋ
 </div>
+
+
+<script>
+/* MATRIX RAIN BACKGROUND */
+const canvas = document.getElementById("matrixBg");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&*";
+const fontSize = 16;
+const columns = canvas.width / fontSize;
+
+const drops = [];
+for (let i = 0; i < columns; i++) drops[i] = 1;
+
+function drawMatrix() {
+    ctx.fillStyle = "rgba(0,0,0,0.08)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#00ff80";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.95) {
+            drops[i] = 0;
+        }
+        drops[i]++;
+    }
+}
+
+setInterval(drawMatrix, 40);
+
+window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+</script>
 
 </body>
 </html>
