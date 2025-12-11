@@ -6,136 +6,97 @@
 <title>𝐌𝐀𝐀𝐍𝐀𝐕 𝐍𝐄𝐓𝐖𝐎𝐑𝐊</title>
 
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
 
+    /* MATRIX BACKGROUND */
     #matrixBg {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: -1;
-        background: black;
+        position: fixed; top: 0; left: 0;
+        width: 100vw; height: 100vh;
+        z-index: -1; background: black;
     }
 
-    body {
-        color: #00ff80;
-        text-shadow: 0 0 8px #00ff80;
-    }
+    body { color: #00ff80; text-shadow: 0 0 8px #00ff80; }
 
     header {
-        padding: 25px;
-        text-align: center;
-        font-size: 30px;
-        letter-spacing: 3px;
-        font-weight: bold;
+        padding: 25px; text-align: center; font-size: 30px;
+        letter-spacing: 3px; font-weight: bold;
         border-bottom: 2px solid #00ff80;
         box-shadow: 0 0 15px #00ff80;
     }
 
-    .hero {
-        padding: 100px 20px;
-        text-align: center;
-    }
-
-    .hero h2 {
-        font-size: 50px;
-        text-shadow: 0 0 15px #00ff80;
-    }
-
-    .hero p {
-        margin-top: 10px;
-        font-size: 18px;
-        color: #baffd9;
-    }
+    .hero { padding: 100px 20px; text-align: center; }
+    .hero h2 { font-size: 50px; text-shadow: 0 0 15px #00ff80; }
+    .hero p { margin-top: 10px; font-size: 18px; color: #baffd9; }
 
     .bot-section {
-        max-width: 800px;
-        margin: auto;
-        padding: 60px 20px;
+        max-width: 800px; margin: auto; padding: 60px 20px;
     }
 
-    .bot-title {
-        text-align: center;
-        font-size: 30px;
-        margin-bottom: 30px;
-    }
+    .bot-title { text-align: center; font-size: 30px; margin-bottom: 30px; }
 
     .bot-btn {
-        display: block;
-        width: 100%;
-        padding: 14px;
-        margin: 12px 0;
-        background: rgba(0,0,0,0.4);
-        border: 2px solid #00ff80;
-        color: #00ff80;
-        text-decoration: none;
-        text-align: center;
-        border-radius: 10px;
-        font-size: 18px;
-        font-weight: 600;
-        box-shadow: 0 0 10px #00ff80;
-        transition: 0.2s;
-        backdrop-filter: blur(4px);
+        display: block; width: 100%; padding: 14px; margin: 12px 0;
+        background: rgba(0,0,0,0.4); border: 2px solid #00ff80; color: #00ff80;
+        text-decoration: none; text-align: center; border-radius: 10px;
+        font-size: 18px; font-weight: 600; box-shadow: 0 0 10px #00ff80;
+        transition: 0.2s; backdrop-filter: blur(4px);
     }
 
     .bot-btn:hover {
-        background: #00ff80;
-        color: #000;
-        box-shadow: 0 0 20px #00ff80;
+        background: #00ff80; color: #000; box-shadow: 0 0 20px #00ff80;
     }
 
+    /* OWNER BOX */
     .owner-box {
-        max-width: 650px;
-        margin: 70px auto;
-        padding: 50px 30px;
-        border: 2px solid #00ff80;
-        border-radius: 20px;
-        background: rgba(0, 0, 0, 0.6);
-        box-shadow: 0 0 25px #00ff80;
-        text-align: center;
+        max-width: 650px; margin: 70px auto;
+        padding: 50px 30px; border: 2px solid #00ff80;
+        border-radius: 20px; background: rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0 25px #00ff80; text-align: center;
     }
 
     .owner-box img {
-        width: 90px;
-        margin-bottom: 20px;
+        width: 90px; margin-bottom: 20px;
         filter: drop-shadow(0 0 10px #00ff80);
     }
 
-    .owner-btn, .logo-btn {
-        display: inline-block;
-        margin-top: 30px;
-        padding: 14px 38px;
-        background: #00ff80;
-        color: #000;
-        font-weight: bold;
-        border-radius: 8px;
-        text-decoration: none;
-        box-shadow: 0 0 15px #00ff80;
-        font-size: 17px;
+    .owner-btn {
+        display: inline-block; margin-top: 30px; padding: 14px 38px;
+        background: #00ff80; color: #000; font-weight: bold;
+        border-radius: 8px; text-decoration: none;
+        box-shadow: 0 0 15px #00ff80; font-size: 17px;
     }
 
-    .owner-btn:hover, .logo-btn:hover {
-        opacity: 0.85;
+    .owner-btn:hover { opacity: 0.85; }
+
+    /* 🔥 LOGO VIEWER BOX */
+    #logoBox {
+        margin-top: 30px;
+        display: none;
+        animation: fadeIn 0.7s ease-in-out forwards;
+    }
+
+    #logoBox img {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 0 25px #00ff80;
+    }
+
+    /* Fade animation */
+    @keyframes fadeIn {
+        from {opacity: 0; transform: scale(0.92);}
+        to   {opacity: 1; transform: scale(1);}
     }
 
     .footer {
-        margin-top: 60px;
-        text-align: center;
-        padding: 20px;
-        font-size: 15px;
-        color: #77ffb3;
+        margin-top: 60px; text-align: center;
+        padding: 20px; font-size: 15px; color: #77ffb3;
     }
 </style>
 </head>
 
 <body>
 
+<!-- MATRIX BACKGROUND -->
 <canvas id="matrixBg"></canvas>
 
 <header>𒆜 𝕄𝔸𝔸ℕ𝔸𝕍 ℕ𝔼𝕋𝕎𝕆ℝ𝕂 𒆜</header>
@@ -153,9 +114,9 @@
     <a class="bot-btn" href="https://t.me/maanavXchatbot?start=_tgr_w7KOC4AzODA1">ϻᴀᴀɴᴀᴠ ꭙ ᴄʜᴀᴛ • ALIVE</a>
     <a class="bot-btn" href="https://t.me/maanavXcfbot?start=_tgr_JefpShgwNGI1">ϻᴀᴀɴᴀᴠ ꭙ ʀᴀɴᴋɪɴɢ • ALIVE</a>
     <a class="bot-btn" href="https://t.me/maanavXghbot?start=_tgr_vMnDJpI4OWE1">ϻᴀᴀɴᴀᴠ ꭙ ᴄᴏɴᴛʀᴏʟʟᴇʀ • ALIVE</a>
-    <a class="bot-btn" href="https://t.me/maanavXrxnbot?start=_tgr_qENYoTA5Yzc1">ϻᴀᴀɴᴀᴠ ꭙ ʀᴇᴀᴄᴛɪᴏɴ • ALIVE</a>
-    <a class="bot-btn" href="https://t.me/maanavXlgbot?start=_tgr_xyasJ1swYzI1">ϻᴀᴀᴀᴠ ꭙ ʟɪꜰᴇ ɢᴀᴍᴇ • ALIVE</a>
-    <a class="bot-btn" href="https://t.me/maanavXubot?start=_tgr_0zttKYo2MTdl">ϻᴀᴀᴠ ꭙ ɴᴜᴍ ʙᴏᴛ • ALIVE</a>
+    <a class="bot-btn" href="https://t.me/maanavXrxnbot?start="_tgr_qENYoTA5Yzc1">ϻᴀᴀɴᴀᴠ ꭙ ʀᴇᴀᴄᴛɪᴏɴ • ALIVE</a>
+    <a class="bot-btn" href="https://t.me/maanavXlgbot?start=_tgr_xyasJ1swYzI1">ϻᴀᴀɴᴀᴠ ꭙ ʟɪꜰᴇ ɢᴀᴍᴇ • ALIVE</a>
+    <a class="bot-btn" href="https://t.me/maanavXubot?start=_tgr_0zttKYo2MTdl">ϻᴀᴀɴᴀᴠ ꭙ ɴᴜᴍ ʙᴏᴛ • ALIVE</a>
 </section>
 
 <section>
@@ -173,13 +134,15 @@
             ➤ ACCESS: <b>妥 ᴳᴿᴬᴺᵀᴱᴰ 妥</b>
         </div>
 
-        <!-- NEW ADDED BUTTON -->
-        <a class="logo-btn" href="https://files.catbox.moe/iamdk3.jpg" target="_blank">✨ TAP TO SEE LOGO ✨</a>
+        <!-- 🔥 TAP TO SEE LOGO BUTTON -->
+        <a class="owner-btn" onclick="showLogo()">✨ TAP TO SEE LOGO ✨</a>
 
-        <br>
+        <!-- 🔥 HIDDEN LOGO BOX -->
+        <div id="logoBox">
+            <img src="https://files.catbox.moe/iamdk3.jpg">
+        </div>
 
-        <a class="owner-btn" href="https://t.me/III_MAA7NAV_III">🌺 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐎𝐰𝐧𝐞𝐫 🌺</a>
-
+        <a class="owner-btn" href="https://t.me/III_MAA7NAV_III">🌺 Contact Owner 🌺</a>
     </div>
 </section>
 
@@ -188,17 +151,16 @@
 </div>
 
 <script>
+/* MATRIX RAIN */
 const canvas = document.getElementById("matrixBg");
 const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = innerWidth; canvas.height = innerHeight;
 
 const letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&*";
 const fontSize = 16;
 const columns = canvas.width / fontSize;
-
 const drops = [];
+
 for (let i = 0; i < columns; i++) drops[i] = 1;
 
 function drawMatrix() {
@@ -212,19 +174,16 @@ function drawMatrix() {
         const text = letters[Math.floor(Math.random() * letters.length)];
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.95) {
-            drops[i] = 0;
-        }
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.95) drops[i] = 0;
         drops[i]++;
     }
 }
-
 setInterval(drawMatrix, 40);
 
-window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-});
+/* 🔥 SHOW LOGO FUNCTION */
+function showLogo() {
+    document.getElementById("logoBox").style.display = "block";
+}
 </script>
 
 </body>
