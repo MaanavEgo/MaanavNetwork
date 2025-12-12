@@ -146,4 +146,53 @@
             ➤ ACCESS: <b>妥 ᴳᴿᴬᴺᵀᴱᴰ 妥</b>
         </div>
 
-        <a class="owner-btn" onclick="showLogo()">✨ TAP TO SE
+        <a class="owner-btn" onclick="showLogo()">✨ TAP TO SEE LOGO ✨</a>
+
+        <div id="logoBox">
+            <img src="https://files.catbox.moe/iamdk3.jpg">
+        </div>
+
+        <a class="owner-btn" href="https://t.me/III_MAA7NAV_III">🌺 Contact Owner 🌺</a>
+    </div>
+</section>
+
+<div class="footer float">
+    ᴘᴏᴡᴇʀᴇᴅ ʙʏ @ᴀʙᴏᴜᴛ_ᴍᴀᴀɴᴀᴠ • © 2025 ᴍᴀᴀɴᴀᴠ ɴᴇᴛᴡᴏʀ𝐤
+</div>
+
+<script>
+const canvas = document.getElementById("matrixBg");
+const ctx = canvas.getContext("2d");
+canvas.width = innerWidth; canvas.height = innerHeight;
+
+const letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&*";
+const fontSize = 16;
+const columns = canvas.width / fontSize;
+const drops = [];
+
+for (let i = 0; i < columns; i++) drops[i] = 1;
+
+function drawMatrix() {
+    ctx.fillStyle = "rgba(0,0,0,0.08)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#00eaff";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.95) drops[i] = 0;
+        drops[i]++;
+    }
+}
+setInterval(drawMatrix, 40);
+
+function showLogo() {
+    document.getElementById("logoBox").style.display = "block";
+}
+</script>
+
+</body>
+</html>
